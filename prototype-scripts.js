@@ -6,3 +6,11 @@ Array.prototype._reduce = function(callback, initialValue) {
     return currentValue;
 };
 
+Array.prototype._forEach = function(callback) {
+    let arr = this;
+    for (let index = 0; index < this.length; index++) {
+        let currentValue = this[index];
+        callback(currentValue, index, arr);
+    }
+};
+
