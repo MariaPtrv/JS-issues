@@ -14,3 +14,11 @@ Array.prototype._forEach = function(callback) {
     }
 };
 
+Array.prototype._filter = function(callback) {
+    let newArr = []
+    for (let i = 0; i < this.length; i++){
+        if (callback(this[i], i, this) === true)
+            newArr.push(this[i])
+    }
+    return newArr;
+};
