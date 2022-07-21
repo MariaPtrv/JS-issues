@@ -44,3 +44,11 @@ Array.prototype._map= function(callback) {
     return  newArray;
 };
 
+Array.prototype._shift= function() {
+    let firstElement = this[0]
+    for (let i=1; i < this.length; i++) {
+        this[i-1] = this[i]
+    }
+    this.pop();
+    return  firstElement;
+};
