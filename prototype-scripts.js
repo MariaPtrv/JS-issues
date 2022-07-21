@@ -22,3 +22,14 @@ Array.prototype._filter = function(callback) {
     }
     return newArr;
 };
+
+Array.prototype._join = function(separator) {
+    let str = ""
+    let s =  separator ? separator : ","
+    for (let i = 0; i < this.length; i++) {
+        if (i!== this.length-1 )
+            str+=this[i] + s;
+        else str+=this[i]
+    }
+    return str;
+};
