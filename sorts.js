@@ -10,3 +10,29 @@ function bubbleSort(array) {
   }
   return array;
 }
+
+function swap(arr, i, j) {
+  let swap = arr[i];
+  arr[i] = arr[j];
+  arr[j] = swap;
+}
+
+function cocktailSort(array) {
+  let left = 0;
+  let right = array.length - 1;
+  while (left < right) {
+      for (let i = left; i < right; i++) {
+          if (array[i] > array[i + 1]) {
+              swap(array, i, i + 1);
+          }
+      }
+      right--;
+      for (let i = right; i > left; i--) {
+          if (array[i] < array[i - 1]) {
+              swap(array, i, i - 1);
+          }
+      }
+      left++;
+  }
+  return array;
+}
